@@ -9,6 +9,7 @@ For details, see: https://docs.python.org/3/library/logging.html
 """
 import logging
 
+
 def logging_test(logger):
     """Log messages using each of the standard logging levels 
        plus 1 custom log level.
@@ -23,7 +24,17 @@ def logging_test(logger):
     # level = logging.WARN + 5 (custom log level between WARN and ERROR)
     # error
     # critical or fatal
+    logger.debug("Massage to debug an application.")
+    logger.info("Messages progress of the application at coarse-grained level.")
+    logger.warning("Designates potentially harmful situations.")
+    logger.error("Error that might still allow the application to continue running.")
+    logger.critical("Error that might shut down an application.")
     level = logging.WARN + 5  # custom log level
+    logging.addLevelName(level, "WarnEr")
+    logger.log(level, "Custom log level between WARN and ERROR.")
+
+    print(logger.getEffectiveLevel())
+
     print("You forgot to write logging_test")
 
 
