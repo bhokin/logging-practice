@@ -33,8 +33,6 @@ def logging_test(logger):
     logging.addLevelName(level, "WarnEr")
     logger.log(level, "Custom log level between WARN and ERROR.")
 
-    print(logger.getEffectiveLevel())
-
     print("You forgot to write logging_test")
 
 
