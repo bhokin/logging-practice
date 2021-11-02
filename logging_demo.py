@@ -13,25 +13,21 @@ import logging
 def logging_test(logger):
     """Log messages using each of the standard logging levels 
        plus 1 custom log level.
-    """ 
-    # TODO write a log message that uses each of these log levels.
-    #  Your log message should be an example of the sort of information 
-    #  you would log at that level:
-    #
-    # debug
-    # info
-    # warning
-    # level = logging.WARN + 5 (custom log level between WARN and ERROR)
-    # error
-    # critical or fatal
+    """
+    # debug (10)
     logger.debug("Massage to debug an application.")
+    # info (20)
     logger.info("Messages progress of the application at coarse-grained level.")
+    # warning (30)
     logger.warning("Designates potentially harmful situations.")
-    logger.error("Error that might still allow the application to continue running.")
-    logger.critical("Error that might shut down an application.")
+    # level = logging.WARN + 5 (custom log level between WARN and ERROR)
     level = logging.WARN + 5  # custom log level
     logging.addLevelName(level, "WarnEr")
     logger.log(level, "Custom log level between WARN and ERROR.")
+    # error (40)
+    logger.error("Error that might still allow the application to continue running.")
+    # critical or fatal (50)
+    logger.critical("Error that might shut down an application.")
 
     print("You forgot to write logging_test")
 
@@ -60,18 +56,16 @@ def simple_config():
 
 def my_config():
     """Write your own logging configuration."""
-    # TODO write your own logging configuration
-    #      specify a log file, threshold level, format, and append mode
+    # specify a log file, threshold level, format, and append mode
     FORMAT = '%(asctime)s %(name)s %(levelname)s: %(message)s'
-    logging.basicConfig(filename='log.log', level=logging.DEBUG, format=FORMAT, filemode='w')
+    logging.basicConfig(filename='message.log', level=logging.DEBUG, format=FORMAT, filemode='w')
     # 'a' (default) -> open for writing, appending to the end of file if it exists
     # 'w' -> open for writing, truncating the file first
     # In a real application, normally should do 'a', but 'w' is easier to read.
 
 
 if __name__ == "__main__":
-    #
-    # TODO Configure logging using one of these choices:
+    # Configure logging using one of these choices:
 
     # 1. Call basicConfig with the default settings
     # logging.basicConfig()
@@ -90,7 +84,13 @@ if __name__ == "__main__":
     print("Logging to ", str(logger))
     logging_test(logger)
 
+    # create a named logger, set a a custom log threshold, and call logging_test.
+    # root logger
+    logger = logging.getLogger()
+    logger.setLevel(logging.WARN)
+    logging_test(logger)
 
-    # TODO create a named logger, set a a custom log threshold,
-    #       and call logging_test again with your named logger.
-
+    # logging for the 'foo' module
+    my_logger = logging.getLogger("foo")
+    my_logger.setLevel(logging.DEBUG)  # log everything
+    logging_test(my_logger)

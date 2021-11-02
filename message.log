@@ -1,0 +1,16 @@
+2021-11-02 23:33:38,219 root DEBUG: Massage to debug an application.
+2021-11-02 23:33:38,220 root INFO: Messages progress of the application at coarse-grained level.
+2021-11-02 23:33:38,220 root WARNING: Designates potentially harmful situations.
+2021-11-02 23:33:38,220 root WarnEr: Custom log level between WARN and ERROR.
+2021-11-02 23:33:38,220 root ERROR: Error that might still allow the application to continue running.
+2021-11-02 23:33:38,220 root CRITICAL: Error that might shut down an application.
+2021-11-02 23:33:38,220 root WARNING: Designates potentially harmful situations.
+2021-11-02 23:33:38,220 root WarnEr: Custom log level between WARN and ERROR.
+2021-11-02 23:33:38,220 root ERROR: Error that might still allow the application to continue running.
+2021-11-02 23:33:38,220 root CRITICAL: Error that might shut down an application.
+2021-11-02 23:33:38,220 foo DEBUG: Massage to debug an application.
+2021-11-02 23:33:38,220 foo INFO: Messages progress of the application at coarse-grained level.
+2021-11-02 23:33:38,220 foo WARNING: Designates potentially harmful situations.
+2021-11-02 23:33:38,220 foo WarnEr: Custom log level between WARN and ERROR.
+2021-11-02 23:33:38,220 foo ERROR: Error that might still allow the application to continue running.
+2021-11-02 23:33:38,220 foo CRITICAL: Error that might shut down an application.
